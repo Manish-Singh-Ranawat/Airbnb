@@ -1,0 +1,99 @@
+<% layout('layouts/boilerplate') -%>
+
+    <body>
+        <div class="container-fluid">
+            <h3 class="offset-sm-2 mt-2 mb-2 text-dark-emphasis">Create new listing</h3>
+                <form action="/listings" method="post"
+                    class="needs-validation col-sm-7 col-md-8 col-lg-7 col-xl-5 offset-sm-2" novalidate enctype="multipart/form-data">
+
+                <div class="mb-3">
+                    <label for="title" class="form-label mb-1">Title</label>
+                    <input type="text" name="listing[title]" id="title" class="form-control" placeholder="Enter Title"
+                        required>
+                    <div class="invalid-feedback">
+                        Please provide a valid title
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label mb-1">Description</label>
+                    <textarea name="listing[description]" id="description" class="form-control"
+                        placeholder="Enter Description" cols="50" rows="2" required></textarea>
+                    <div class="invalid-feedback">
+                        Please provide a valid description
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <div class="col-md-6 col-lg-5 mb-3 mb-md-0">
+                        <label for="price" class="form-label mb-1">Price (in &#8377)/night</label>
+                        <input type="number" name="listing[price]" id="price" class="form-control"
+                            placeholder="Enter price" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid price
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-7">
+                        <label for="country" class="form-label mb-1">Country</label>
+                        <input type="text" name="listing[country]" id="country" class="form-control"
+                            placeholder="Enter country" required>
+                        <div class="invalid-feedback">
+                            Please provide a valid country
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="location" class="form-label mb-1">Location</label>
+                    <input type="text" name="listing[location]" id="location" class="form-control"
+                        placeholder="Enter location" required>
+                    <div class="invalid-feedback">
+                        Please provide a valid location
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="category" class="form-label mb-1">Category</label>
+                    <select name="listing[category]" id="category" class="form-select form-select-md mb-3" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Top Cities">Top Cities</option>
+                        <option value="Rooms">Rooms</option>
+                        <option value="Mansions">Mansions</option>
+                        <option value="Cabins">Cabins</option>
+                        <option value="Tropical">Tropical</option>
+                        <option value="Beach">Beach</option>
+                        <option value="Lakes">Lakes</option>
+                        <option value="Arctic">Arctic</option>
+                        <option value="Desert">Desert</option>
+                        <option value="Mountains">Mountains</option>
+                        <option value="Countryside">Countryside</option>
+                        <option value="Camping">Camping</option>
+                        <option value="Swimming Pools">Swimming Pools</option>
+                        <option value="Amazing Views">Amazing Views</option>
+                        <option value="Historical Homes">Historical Homes</option>
+                    </select>
+
+                    <div class="invalid-feedback">
+                        Please select a valid category
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label for="image" class="form-label mb-1">Upload Image</label>
+                    <input type="file" name="listing[image]" id="image" class="form-control" accept=".png,.jpg,.jpeg"
+                       required >
+                    <div class="invalid-feedback">
+                        Please add an image
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <button class="btn btn-danger" type="submit">Add</button>
+                </div>
+
+            </form>
+        </div>
+
+
+    </body>
