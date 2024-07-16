@@ -1,0 +1,196 @@
+<div class="container-fluid my-4 d-flex justify-content-between align-items-center ">
+    <!-- category -->
+    <div class="d-flex flex-nowrap overflow-x-auto mx-sm-3 text-body-secondary category-body fs-5 ps-2" style="gap: 1.5rem;">
+
+        <a href="/listings/category/Trending" class="category-link text-body-secondary">
+            <i class="fas fa-fire mb-1 "></i>
+            <span class="category-text fw-medium ">
+                Trending
+            </span>
+        </a>
+
+        <a href="/listings/category/Top Cities" class="category-link text-body-secondary">
+            <i class="fas fa-city mb-1"></i>
+            <span class="category-text fw-medium" style="white-space: nowrap;">Top Cities</span>
+        </a>
+
+        <a href="/listings/category/Rooms" class="category-link text-body-secondary">
+            <i class="fas fa-bed mb-1"></i>
+            <span class="category-text fw-medium">Rooms</span>
+        </a>
+
+        <a href="/listings/category/Mansions" class="category-link text-body-secondary">
+            <i class="fas fa-hotel mb-1"></i>
+            <span class="category-text fw-medium">Mansions</span>
+        </a>
+
+        <a href="/listings/category/Cabins" class="category-link text-body-secondary">
+            <i class="fas fa-house mb-1"></i>
+            <span class="category-text fw-medium">Cabins</span>
+        </a>
+
+        <a href="/listings/category/Tropical" class="category-link text-body-secondary">
+            <i class="fas fa-tree mb-1"></i>
+            <span class="category-text fw-medium">Tropical</span>
+        </a>
+
+        <a href="/listings/category/Beach" class="category-link text-body-secondary">
+            <i class="fas fa-umbrella-beach mb-1"></i>
+            <span class="category-text fw-medium">Beach</span>
+        </a>
+
+        <a href="/listings/category/Lakes" class="category-link text-body-secondary">
+            <i class="fas fa-water mb-1"></i>
+            <span class="category-text fw-medium">Lakes</span>
+        </a>
+
+        <a href="/listings/category/Arctic" class="category-link text-body-secondary">
+            <i class="fas fa-snowflake mb-1"></i>
+            <span class="category-text fw-medium">Arctic</span>
+        </a>
+
+        <a href="/listings/category/Desert" class="category-link text-body-secondary">
+            <i class="fas fa-sun mb-1"></i>
+            <span class="category-text fw-medium">Desert</span>
+        </a>
+
+        <a href="/listings/category/Mountains" class="category-link text-body-secondary">
+            <i class="fas fa-mountain mb-1"></i>
+            <span class="category-text fw-medium">Mountains</span>
+        </a>
+
+        <a href="/listings/category/Countryside" class="category-link text-body-secondary">
+            <i class="fas fa-leaf mb-1"></i>
+            <span class="category-text fw-medium">Countryside</span>
+        </a>
+
+        <a href="/listings/category/Camping" class="category-link text-body-secondary">
+            <i class="fas fa-campground mb-1"></i>
+            <span class="category-text fw-medium">Camping</span>
+        </a>
+
+        <a href="/listings/category/Swimming Pools" class="category-link text-body-secondary">
+            <i class="fas fa-swimming-pool mb-1"></i>
+            <span class="category-text fw-medium" style="white-space: nowrap;">Swimming Pools</span>
+        </a>
+
+        <a href="/listings/category/Amazing Views" class="category-link text-body-secondary">
+            <i class="fas fa-binoculars mb-1"></i>
+            <span class="category-text fw-medium" style="white-space: nowrap;">Amazing Views</span>
+        </a>
+
+        <a href="/listings/category/Historical Homes" class="category-link text-body-secondary">
+            <i class="fas fa-monument mb-1"></i>
+            <span class="category-text fw-medium" style="white-space: nowrap;">Historical Homes</span>
+        </a>
+
+    </div>
+
+    <!-- scroll button -->
+    <div class="ms-auto me-1">
+        <button class="btn btn-sm rounded-circle" id="next-btn">
+            <i class="fa fa-chevron-right"></i>
+        </button>
+    </div>
+
+
+    <div class="vr"></div>
+
+    <div class="d-flex align-items-center">
+
+        <!-- sort -->
+        <div class="dropdown px-2">
+
+            <button id="sortBtn" type="button" class="btn  dropdown-toggle d-flex align-items-center p-1"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                <span class="material-symbols-outlined">
+                    swap_vert
+                    </span>
+                <span class="ps-1">Sort</span>
+            </button>
+
+            <form action="/listings/sort" method="get" class="dropdown-menu p-3 needs-validation" style="width: 15rem;"
+                novalidate>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" required
+                        value='{"type":"price","order":1}'>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        Price -- Low to High
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" required
+                        value='{"type":"price","order":-1}'>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Price -- High to Low
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" required
+                        value='{"type":"country","order":1}'>
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Country -- A to Z
+                    </label>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" required
+                        value='{"type":"country","order":-1}'>
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        Country -- Z to A
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary " id="formSubmitBtn">Sort</button>
+            </form>
+        </div>
+
+        <!-- filter -->
+        <div class="dropdown pe-sm-4">
+
+            <button id="filterBtn" type="button" class="btn dropdown-toggle d-flex align-items-center p-1"
+                data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside">
+                
+                    <span class="material-symbols-outlined">
+                        page_info
+                        </span>
+
+                <span class="ps-1">Filter</span>
+            </button>
+
+            <form action="/listings/filter" method="get" class="dropdown-menu p-3 needs-validation" style="width: 20rem;"
+                novalidate>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault5" required
+                        value="price">
+                    <label class="form-check-label" for="flexRadioDefault5">
+                        By price
+                    </label>
+                    <div class="mb-2 mt-2 pe-3">
+                        <input type="number" name="minPrice" id="minPrice" class="form-control"
+                            placeholder="Enter minimum price" required>
+                    </div>
+                    <div class="mb-3 mt-2 pe-3">
+                        <input type="number" name="maxPrice" id="maxPrice" class="form-control"
+                            placeholder="Enter maximum price" required>
+                    </div>
+                </div>
+                <div class="form-check mb-3">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault6" required
+                        value="location">
+                    <label class="form-check-label" for="flexRadioDefault6">
+                        By location
+                    </label>
+                    <div class="mb-3 mt-2 pe-3">
+                        <input type="text" name="location" id="location" class="form-control"
+                            placeholder="Enter location" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </form>
+
+
+        </div>
+
+    </div>
+
+
+</div>

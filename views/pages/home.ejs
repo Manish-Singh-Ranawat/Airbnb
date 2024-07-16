@@ -1,0 +1,36 @@
+<% layout("/layouts/boilerplate")-%>
+
+  <body>
+    <div class="container-fluid">
+
+      <div class="row px-1 px-lg-4">
+
+        <%- include('../includes/header.ejs') %>
+
+          <% for(listing of listings){ %>
+            <div class="col-md-6  col-xl-4 mb-5">
+
+              <a href="/listings/<%= listing._id %>" class="text-decoration-none">
+
+                <div class="card listing-card px-2 " style="overflow: hidden;">
+                  <img src="<%= listing.image.url %>"" class=" card-img-top" alt="image" loading="lazy">
+                  <h5 class="card-title text-dark mb-0 ps-3 pt-2 pb-1">
+                    <%= listing.title %>
+                  </h5>
+                  <div
+                    class="card-body d-flex justify-content-between home-card-text py-0 px-4  text-dark-emphasis fw-medium">
+                    <span>
+                      <%= listing.country %>
+                    </span>
+                    <span>&#8377 <%= listing.price.toLocaleString("en-IN")%>/night</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <% } %>
+      </div>
+    </div>
+   
+    <script src="/js/headerBtns.js"></script>
+
+  </body>

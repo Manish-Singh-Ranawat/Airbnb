@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-md bg-light border-bottom border-secondary-subtle sticky-top lh-1">
+  <div class="container-fluid my-1">
+
+    <div class="navbar-brand text-danger ps-1 fs-4 fw-bold">
+        <i class="fa-regular fa-compass"></i>
+        Airbnb
+    </div>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+      aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+      <!-- offcanvas header -->
+      <div class="offcanvas-header border-bottom border-secondary-subtle" style="margin-bottom: -1rem;">
+        <div class="offcanvas-title" id="offcanvasNavbarLabel">
+          <div class="nav-item dropdown ms-2">
+
+            <a class="nav-link dropdown-toggle border border-secondary border-2 rounded-pill p-1" href="#" role="button"
+              data-bs-toggle="dropdown" aria-expanded="false" id="profile">
+              <i class="fa-solid fa-user px-2"></i>
+              <i class="fa-solid fa-bars pe-2"></i>
+            </a>
+
+            <ul class="dropdown-menu">
+              <% if (!currentUser) { %>
+                <li><a class="dropdown-item" href="/signup">Signup</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <% } %>
+                  <% if (currentUser) { %>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    <% } %>
+            </ul>
+
+          </div>
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+
+      <!--nav body -->
+      <div class="offcanvas-body">
+
+        <ul class="navbar-nav justify-content-start flex-grow-1 pe-2">
+          <li class="nav-item fs-5">
+            <a class="nav-link text-dark-emphasis ps-2" href="/listings">Explore</a>
+          </li>
+          <li class="nav-item fs-5">
+            <a class="nav-link text-dark-emphasis ps-2" href="/listings/new">Airbnb your home</a>
+          </li>
+      <!-- search -->
+          <form action="/listings/search" method="get" class="d-flex ms-md-auto needs-validation mt-2 mt-md-0" role="search"
+            id="search" novalidate >
+            <input class="form-control rounded-pill" type="search" placeholder="Search" aria-label="Search" name="input"
+              required >
+              <button class="btn btn-danger rounded-pill ms-1" type="submit" ><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+
+          <div class="d-none d-md-block nav-item dropdown dropstart ms-3 border border-secondary border-2 rounded-pill">
+
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              data-bs-auto-close="true" aria-expanded="false" id="profile">
+              <i class="fa-solid fa-bars px-2"></i>
+              <i class="fa-solid fa-user pe-1"></i>
+            </a>
+
+            <ul class="dropdown-menu ">
+              <% if (!currentUser) { %>
+                <li><a class="dropdown-item" href="/signup">Signup</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/login">Login</a></li>
+                <% } %>
+
+                  <% if (currentUser) { %>
+                    <li><a class="dropdown-item" href="/logout">Logout</a></li>
+                    <% } %>
+            </ul>
+          </div>
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+</nav>
